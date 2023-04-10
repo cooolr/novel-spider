@@ -35,3 +35,19 @@ python main.py https://www.69shu.com/48089/
 1. 支持断点下载
 2. 支持章节更新
 3. 对网站友好，单线程慢慢下
+
+#### 程序打包
+
+1. 安装依赖: `pip install pyinstaller`
+
+2. 执行打包:
+``` bash
+pyinstaller --onefile \
+            --paths= `python -c "import os.path, requests; print(os.path.dirname(requests.__file__))"` \
+main.py
+```
+
+4. 可执行文件下载小说:
+``` bash
+./dist/main https://www.69shu.com/48089/
+```
