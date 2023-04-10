@@ -5,7 +5,7 @@
 
 #### 前置任务
 
-需要先在 [69书屋](https://www.69shu.com/) 搜索小说并进入到完整目录页，比如 [https://www.69shu.com/48089/](https://www.69shu.com/48089/) 
+需要先在 [69书屋](https://www.69shu.com/) 搜索小说并进入到完整目录页，比如 [https://www.69shu.com/48089/](https://www.69shu.com/48089/) ，反正也是要搜索一下看小说存不存在的。
 
 #### 使用说明
 
