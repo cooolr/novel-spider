@@ -12,7 +12,7 @@
 1. 安装依赖: `pip install requests`
 
 2. 查看说明: `python main.py --help`
-```
+``` bash
 usage: main.py [-h] [--proxy PROXY] node_url
 
 positional arguments:
@@ -24,7 +24,7 @@ optional arguments:
 ```
 
 3. 下载小说: 
-```
+``` bash
 # 墙内下载
 python main.py --proxy http://127.0.0.1:7890 https://www.69shu.com/48089/
 
