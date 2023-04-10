@@ -24,7 +24,7 @@ optional arguments:
 
 3. 下载小说: 
 ``` bash
-# 墙内下载
+# 墙内下载，需要指定翻墙代理
 python main.py --proxy http://127.0.0.1:7890 https://www.69shu.com/48089/
 
 # 墙外下载
