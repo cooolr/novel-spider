@@ -9,10 +9,10 @@
 #### 使用说明
 
 1. [Release页](https://github.com/cooolr/69shu-spider/releases/tag/v1.0.0.0) 下载对应平台的可执行文件
-  - Windows 64位: [69shu-spider_windows_amd64](https://github.com/cooolr/69shu-spider/releases/download/v1.0.0.0/69shu-spider_windows_amd64.exe)
-  - Linux 64位: [69shu-spider_linux_amd64](https://github.com/cooolr/69shu-spider/releases/download/v1.0.0.0/69shu-spider_linux_amd64)
-  - Mac 64位: [69shu-spider_darwin_amd64](https://github.com/cooolr/69shu-spider/releases/download/v1.0.0.0/69shu-spider_darwin_amd64)
-  - Android 64位: [69shu-spider_linux_arm64](https://github.com/cooolr/69shu-spider/releases/download/v1.0.0.0/69shu-spider_linux_arm64)
+    - Windows 64位: [69shu-spider_windows_amd64](https://github.com/cooolr/69shu-spider/releases/download/v1.0.0.0/69shu-spider_windows_amd64.exe)
+    - Linux 64位: [69shu-spider_linux_amd64](https://github.com/cooolr/69shu-spider/releases/download/v1.0.0.0/69shu-spider_linux_amd64)
+    - Mac 64位: [69shu-spider_darwin_amd64](https://github.com/cooolr/69shu-spider/releases/download/v1.0.0.0/69shu-spider_darwin_amd64)
+    - Android 64位: [69shu-spider_linux_arm64](https://github.com/cooolr/69shu-spider/releases/download/v1.0.0.0/69shu-spider_linux_arm64)
 
 2. 下载小说: 
 ``` bash
