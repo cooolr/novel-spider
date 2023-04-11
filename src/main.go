@@ -20,15 +20,14 @@ func requestGet(proxyUrl, reqUrl string) string{
     // 设置请求头
     req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36")
     // 创建HTTP客户端对象
+    client := http.Client{}
     if proxyUrl != "" {
         proxyURL, _ := url.Parse(proxyUrl)
-        client := http.Client{
+        client = http.Client{
             Transport: &http.Transport{
                 Proxy: http.ProxyURL(proxyURL),
             },
         }
-    } else {
-        client := http.Client{}
     }
     
     // 发送HTTP请求
