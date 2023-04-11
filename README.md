@@ -14,7 +14,10 @@
     - Mac 64位: [69shu-spider_darwin_amd64](https://github.com/cooolr/69shu-spider/releases/download/v1.1/69shu-spider_darwin_amd64)
     - Android 64位: [69shu-spider_linux_arm64](https://github.com/cooolr/69shu-spider/releases/download/v1.1/69shu-spider_linux_arm64)
 
-2. 下载小说: 
+2. 下载小说（以Windows示例）:
+
+下载完可执行文件69shu-spider_windows_amd64.exe后，在文件所在文件夹的路径栏输入 `cmd` 并回车，进入到cmd命令行界面
+
 ``` bash
 # 墙内下载，需要指定翻墙代理
 69shu-spider_windows_amd64.exe --proxy http://127.0.0.1:7890 https://www.69shu.com/48089/
