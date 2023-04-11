@@ -17,10 +17,10 @@
 2. 下载小说: 
 ``` bash
 # 墙内下载，需要指定翻墙代理
-./69shu-spider_linux_arm64 --proxy http://127.0.0.1:7890 https://www.69shu.com/48089/
+69shu-spider_windows_amd64.exe --proxy http://127.0.0.1:7890 https://www.69shu.com/48089/
 
 # 墙外下载
-./69shu-spider_linux_arm64 https://www.69shu.com/48089/
+69shu-spider_windows_amd64.exe https://www.69shu.com/48089/
 ```
 #### 特性
 
