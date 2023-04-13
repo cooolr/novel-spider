@@ -72,6 +72,7 @@ func getNodeContent(proxyUrl, contentUrl string) string {
     text = strings.ReplaceAll(text, `<div class="bottom-ad">`, "")
     text = strings.ReplaceAll(text, "</div>", "")
     text = strings.ReplaceAll(text, "&nbsp;", " ")
+    text = strings.ReplaceAll(text, "\r\n", "\n")
     text = strings.ReplaceAll(text, "<br />", "\n")
     text = strings.ReplaceAll(text, "&emsp;", "  ")
     text = strings.ReplaceAll(text, "(本章完)", "")
@@ -126,7 +127,7 @@ func main() {
         content = strings.TrimLeft(content, " ")
         // 处理标题
         if string(content[0:3]) != "第" {
-            content = title + "\n\n    " + content
+            content = "\n" + title + "\n\n    " + content
         }
         // 写入章节内容到文件
         if _, err := fileF.WriteString(content); err != nil {
