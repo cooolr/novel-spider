@@ -123,6 +123,9 @@ func main() {
         // 去除正文前面的空格换行符
         re := regexp.MustCompile(`^\s+`)
         content = re.ReplaceAllString(content, "")
+        // 处理标题
+        if content[0] != "第":
+            content = title + "\n\n    " + content
         // 写入章节内容到文件
         if _, err := fileF.WriteString(content); err != nil {
             fmt.Printf("写入文件失败: %v\n", err)
