@@ -67,7 +67,7 @@ func getNodeList(proxyUrl, nodeUrl string) (string, [][]string) {
 func getNodeContent(proxyUrl, contentUrl string) string {
     bodyString := requestGet(proxyUrl, contentUrl)
     // 获取小说正文
-    reText := regexp.MustCompile(`<script>loadAdv\(2,0\);</script>(?s:(.*?))<script>loadAdv\(3,0\);</script>`)
+    reText := regexp.MustCompile(`(?s)<script>loadAdv\(2,0\);</script>(.*?)<script>loadAdv\(3,0\);</script>`)
     text := reText.FindStringSubmatch(bodyString)[1]
     text = strings.ReplaceAll(text, `<div class="bottom-ad">`, "")
     text = strings.ReplaceAll(text, "</div>", "")
@@ -120,6 +120,9 @@ func main() {
         }
         contentUrl := node[1]
         content := getNodeContent(proxyUrl, contentUrl)
+        // 去除正文前面的空格换行符
+        re := regexp.MustCompile(`^\s+`)
+        content = re.ReplaceAllString(content, "")
         // 写入章节内容到文件
         if _, err := fileF.WriteString(content); err != nil {
             fmt.Printf("写入文件失败: %v\n", err)
