@@ -122,9 +122,10 @@ func main() {
         content := getNodeContent(proxyUrl, contentUrl)
         // 去除正文前面的空格换行符
         re := regexp.MustCompile(`^\s+`)
-        content = re.ReplaceAllString(content, "")
+        content = re.ReplaceAllString(content, "") 
+        content = strings.TrimLeft(content, " ")
         // 处理标题
-        if string(content[0]) != "第" {
+        if string(content[0:3]) != "第" {
             content = title + "\n\n    " + content
         }
         // 写入章节内容到文件
