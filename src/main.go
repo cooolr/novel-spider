@@ -72,8 +72,8 @@ func getNodeContent(proxyUrl, contentUrl string) string {
     text = strings.ReplaceAll(text, `<div class="bottom-ad">`, "")
     text = strings.ReplaceAll(text, "</div>", "")
     text = strings.ReplaceAll(text, "&nbsp;", " ")
-    text = strings.ReplaceAll(text, "\r\n", "\n")
     text = strings.ReplaceAll(text, "<br />", "\n")
+    text = strings.ReplaceAll(text, "\r", "")
     text = strings.ReplaceAll(text, "&emsp;", "  ")
     text = strings.ReplaceAll(text, "(本章完)", "")
     return text
