@@ -43,6 +43,23 @@
     spider_windows_amd64.exe --index 1 诛仙
     ```
 
+3. 在Termux使用说明
+    
+    下载 `spider_linux_arm64` 到 `/sdcard/Downloads` 目录
+    
+    ``` bash
+    # 去到家目录
+    cd ~
+    # 复制spider_linux_arm64到当前目录
+    cp /sdcard/Downloads/spider_linux_arm64 spider
+    # 设置可执行权限
+    chmod 755 spider
+    # 移动到bin目录
+    mv spider ~/../usr/bin/
+    # 在任意路径下载小说
+    spider 诛仙
+    ```
+
 #### 特性
 
 1. 关键词搜索
