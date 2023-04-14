@@ -45,7 +45,7 @@
 
 3. 在Termux使用说明
     
-    下载 `spider_linux_arm64` 到 `/sdcard/Downloads` 目录
+    下载 `[spider_linux_arm64](https://github.com/cooolr/novel-spider/releases/download/v1.3/spider_linux_arm64)` 到 `/sdcard/Downloads` 目录
     
     ``` bash
     # 去到家目录
