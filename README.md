@@ -12,7 +12,7 @@
 
 2. 下载小说（以Windows示例）:
 
-下载完可执行文件spider_windows_amd64.exe后，在文件所在文件夹的路径栏输入 `cmd` 并回车，进入到cmd命令行界面
+    下载完可执行文件spider_windows_amd64.exe后，在文件所在文件夹的路径栏输入 `cmd` 并回车，进入到cmd命令行界面
 
 输入
 ``` bash
