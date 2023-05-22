@@ -15,7 +15,7 @@ def request_get(proxy_url, req_url):
     try:
         response = requests.get(req_url, headers=headers, proxies=proxies)
         response.raise_for_status()
-        response.encoding = response.apparent_encoding
+        response.encoding = "gbk"
         return response.text
     except requests.exceptions.RequestException as e:
         print(f"请求失败，请检查: {e}")
@@ -55,13 +55,14 @@ def get_node_list(proxy_url, node_url):
     body_string = request_get(proxy_url, node_url)
     re_title = re.compile(r'<title>(.*?)最新章节')
     book_name = re_title.search(body_string).group(1)
-    re_node = re.compile(r'<li data-num="\d*?"><a href="(https://www.69shu.com/txt/.*?)">(.*?)</a></li>')
+    re_node = re.compile(r'<li data-num="\d*?"><a href="(https://www.69shu.com/txt/.*?)">.*?</a></li>')
     node_list = re_node.findall(body_string)
     return book_name, node_list
 
 
 def get_node_content(proxy_url, content_url):
     body_string = request_get(proxy_url, content_url)
+    title = re.findall('<h1 class=".*?">(.*?)</h1>', body_string)[0]
     re_content = re.compile(r'(?s)<script>loadAdv\(2,0\);</script>(.*?)<script>loadAdv\(3,0\);</script>')
     text = re_content.search(body_string).group(1)
     text = text.replace('<div class="bottom-ad">', "")
@@ -71,7 +72,7 @@ def get_node_content(proxy_url, content_url):
     text = text.replace("\r", "")
     text = text.replace("&emsp;", "  ")
     text = text.replace("(本章完)", "")
-    return text
+    return title, text
 
 
 def main():
@@ -91,20 +92,18 @@ def main():
     file_name = book_name + ".txt"
     log_name = "." + book_name + ".log"
 
-    exists_title = set()
+    exists_url = set()
     if os.path.exists(log_name):
         with open(log_name, "r") as log_file:
             for line in log_file:
-                exists_title.add(line.strip())
+                exists_url.add(line.strip())
 
-    with open(file_name, "a", encoding="utf-8") as file_f, open(log_name, "a", encoding="utf-8") as log_f:
+    with open(file_name, "a", encoding="gbk") as file_f, open(log_name, "a", encoding="utf-8") as log_f:
         total = len(node_list)
-        for index, node in enumerate(node_list):
-            title = node[1]
-            if title in exists_title:
+        for index, content_url in enumerate(node_list):
+            if content_url in exists_url:
                 continue
-            content_url = node[0]
-            content = get_node_content(proxy_url, content_url)
+            title, content = get_node_content(proxy_url, content_url)
             content = "\n".join(content.strip().split("\n")[1:])
 
             content = f"\n\n\n\n\n\n\n\n{title}\n\n    {content}"
@@ -112,7 +111,7 @@ def main():
             file_f.write(content)
             file_f.flush()
 
-            log_f.write(title + "\n")
+            log_f.write(content_url + "\n")
             log_f.flush()
 
             print(f"{index+1}/{total} {title}")
