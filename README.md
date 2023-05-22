@@ -4,61 +4,34 @@
 
 #### 使用说明
 
-1. [Release页](https://github.com/cooolr/novel-spider/releases/tag/v1.3) 下载对应平台的可执行文件
-    - Windows 64位: [spider_windows_amd64](https://github.com/cooolr/novel-spider/releases/download/v1.3/spider_windows_amd64.exe)
-    - Linux 64位: [spider_linux_amd64](https://github.com/cooolr/novel-spider/releases/download/v1.3/spider_linux_amd64)
-    - Mac 64位: [spider_darwin_amd64](https://github.com/cooolr/novel-spider/releases/download/v1.3/spider_darwin_amd64)
-    - Android 64位: [spider_linux_arm64](https://github.com/cooolr/novel-spider/releases/download/v1.3/spider_linux_arm64)
+输入
+``` bash
+# 墙内下载，需要指定翻墙代理
+python spider.py --proxy http://127.0.0.1:7890 诛仙
 
-2. 下载小说（以Windows示例）:
+# 墙外下载
+python spider.py 诛仙
+```
 
-    下载完可执行文件后，在文件所在文件夹的路径栏输入 `cmd` 并回车，进入到cmd命令行界面
+输出
+``` bash
+1. 诛仙长生传 [摩林若寒 修真武侠 全本]
 
-    输入
-    ``` bash
-    # 墙内下载，需要指定翻墙代理
-    spider_windows_amd64.exe --proxy http://127.0.0.1:7890 诛仙
+2. 一剑诛仙，找爸爸的女儿震惊封神 [小炸鸡 官场职场 全本]
 
-    # 墙外下载
-    spider_windows_amd64.exe 诛仙
-    ```
+3. 诛仙 [萧鼎 修真武侠 全本]
 
-    输出
-    ``` bash
-    1. 诛仙长生传 [摩林若寒 修真武侠 全本]
+4. 从诛仙开始复制诸天 [简单旋律 官场职场 全本]
 
-    2. 一剑诛仙，找爸爸的女儿震惊封神 [小炸鸡 官场职场 全本]
+...
 
-    3. 诛仙 [萧鼎 修真武侠 全本]
+请输入要下载的小说序号: 
+```
 
-    4. 从诛仙开始复制诸天 [简单旋律 官场职场 全本]
-
-    ...
-
-    请输入要下载的小说序号: 
-    ```
-
-    如果不想每次输入序号，使用 `--index` 指定默认序号
-    ``` bash
-    spider_windows_amd64.exe --index 1 诛仙
-    ```
-
-3. 在Termux使用说明
-    
-    下载 [spider_linux_arm64](https://github.com/cooolr/novel-spider/releases/download/v1.3/spider_linux_arm64) 到 `/sdcard/Downloads` 目录
-    
-    ``` bash
-    # 去到家目录
-    cd ~
-    # 复制spider_linux_arm64到当前目录
-    cp /sdcard/Downloads/spider_linux_arm64 spider
-    # 设置可执行权限
-    chmod 755 spider
-    # 移动到bin目录
-    mv spider ~/../usr/bin/
-    # 在任意路径下载小说
-    spider 诛仙
-    ```
+如果不想每次输入序号，使用 `--index` 指定默认序号
+``` bash
+spider_windows_amd64.exe --index 1 诛仙
+```
 
 #### 特性
 
